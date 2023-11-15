@@ -14,6 +14,7 @@ async def echo(websocket):
         await websocket.send(str(message) + "aa")
 
 async def main():
+    print(ip_addr + ":" + str(8765))
     async with serve(echo, ip_addr, 8765):
         await asyncio.Future()  # run forever
 
