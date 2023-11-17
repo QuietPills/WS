@@ -4,7 +4,7 @@ from websockets.server import serve
 
 async def echo(websocket):
     async for message in websocket:
-        print(websocket.remote_address + ":" +  str(message))
+        print(str(websocket.remote_address) + ":" +  str(message))
         await websocket.send(str(message))
 
 async def main():
